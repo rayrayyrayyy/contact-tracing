@@ -2,6 +2,10 @@
 # create a contact tracing app that can add and search entry
 
 # import modules
+import tkinter as tk
+from tkinter import ttk
+from tkinter import messagebox
+
 # create GUI window
 # create GUI elements for personal details
 # create GUI elements to ask user if vaccinated or not
