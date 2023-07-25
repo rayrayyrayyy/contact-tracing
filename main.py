@@ -84,12 +84,42 @@ radio_button_4.grid(row=6, column=0, padx=20)
 radio_button_5 = ctk.CTkRadioButton(vaccinated_frame, variable=radiobutton_var, text='2nd Booster Shot', value=5, hover_color='#FFD95A', fg_color='#4C3D3D')
 radio_button_5.grid(row=7, column=0, padx=20)
 
+for widget in vaccinated_frame.winfo_children():
+    widget.grid_configure(padx=5, pady=3)
+
 # create GUI elements for symptoms
 symptoms_frame =tk.LabelFrame(frame, text="")
 symptoms_frame.grid(row= 2, column=0, sticky='news', padx=100, pady=25)
 
 symptoms_label = ctk.CTkLabel(symptoms_frame, text=" *Please select all symptoms that you have experienced for the past 7 days.")
 symptoms_label.grid(row=0, column=0)
+
+checkbox_1 = ctk.CTkCheckBox(symptoms_frame, text='Sore throat', hover_color='#FFD95A', fg_color='#4C3D3D')
+checkbox_1.grid(row=3)
+
+checkbox_2 = ctk.CTkCheckBox(symptoms_frame, text='Cough', hover_color='#FFD95A', fg_color='#4C3D3D')
+checkbox_2.grid(row=4)
+
+checkbox_3 = ctk.CTkCheckBox(symptoms_frame, text='Fever', hover_color='#FFD95A', fg_color='#4C3D3D')
+checkbox_3.grid(row=5)
+
+checkbox_4 = ctk.CTkCheckBox(symptoms_frame, text='Loss of taste', hover_color='#FFD95A', fg_color='#4C3D3D')
+checkbox_4.grid(row=6)
+
+checkbox_5 = ctk.CTkCheckBox(symptoms_frame, text='Loss of smell', hover_color='#FFD95A', fg_color='#4C3D3D')
+checkbox_5.grid(row=7)
+
+checkbox_6 = ctk.CTkCheckBox(symptoms_frame, text='Shortness of breath', hover_color='#FFD95A', fg_color='#4C3D3D')
+checkbox_6.grid(row=8)
+
+checkbox_7 = ctk.CTkCheckBox(symptoms_frame, text='Runny nose', hover_color='#FFD95A', fg_color='#4C3D3D')
+checkbox_7.grid(row=9)
+
+checkbox_8 = ctk.CTkCheckBox(symptoms_frame, text='Fatigue', hover_color='#FFD95A', fg_color='#4C3D3D')
+checkbox_8.grid(row=10)
+
+checkbox_9 = ctk.CTkCheckBox(symptoms_frame, text='None of the above', hover_color='#FFD95A', fg_color='#4C3D3D')
+checkbox_9.grid(row=11)
 
 # create GUI elements to ask user if he/she had been tested for Covid-19 in the last two weeks
 # create GUI elements for contact person's details
