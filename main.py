@@ -11,7 +11,7 @@ import customtkinter as ctk
 # create GUI window
 root_window = ctk.CTk()
 root_window.title("COVID-19 Contact Tracing APP")
-root_window.geometry("1150x900")
+root_window.geometry("1150x4000")
 root_window.config( bg = "#FFF7D4" )
 
 #canvas = ctk.CTkCanvas(root_window, scrollregion = (0,0,3000, 1500))
@@ -91,9 +91,6 @@ radio_button_4.grid(row=6, column=0, padx=20)
 radio_button_5 = ctk.CTkRadioButton(vaccinated_frame, variable=radiobutton_var, text='2nd Booster Shot', value=5, hover_color='#FFD95A', fg_color='#4C3D3D')
 radio_button_5.grid(row=7, column=0, padx=20)
 
-for widget in vaccinated_frame.winfo_children():
-    widget.grid_configure(padx=5, pady=0)
-
 # create GUI elements for symptoms
 symptoms_frame =tk.LabelFrame(frame, text="")
 symptoms_frame.grid(row= 2, column=0, sticky='news', padx=50, pady=20)
@@ -150,6 +147,9 @@ radio_button_4 = ctk.CTkRadioButton(tested_frame, variable=radiobutton_var, text
 radio_button_4.grid(row=6, column=0, padx=20)
 
 # create GUI elements for contact person's details
+contact_person_details_frame =tk.LabelFrame(frame, text="")
+contact_person_details_frame.grid(row= 5, column=0, padx=50, pady=20)
+
 # add buttons
 ## collect information
 
