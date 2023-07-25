@@ -85,6 +85,12 @@ radio_button_5 = ctk.CTkRadioButton(vaccinated_frame, variable=radiobutton_var, 
 radio_button_5.grid(row=7, column=0, padx=20)
 
 # create GUI elements for symptoms
+symptoms_frame =tk.LabelFrame(frame, text="")
+symptoms_frame.grid(row= 2, column=0, sticky='news', padx=100, pady=25)
+
+symptoms_label = ctk.CTkLabel(symptoms_frame, text=" *Please select all symptoms that you have experienced for the past 7 days.")
+symptoms_label.grid(row=0, column=0)
+
 # create GUI elements to ask user if he/she had been tested for Covid-19 in the last two weeks
 # create GUI elements for contact person's details
 # add buttons
