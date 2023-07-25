@@ -150,6 +150,34 @@ radio_button_4.grid(row=6, column=0, padx=20)
 contact_person_details_frame =tk.LabelFrame(frame, text="")
 contact_person_details_frame.grid(row= 5, column=0, padx=50, pady=20)
 
+name_label = ctk.CTkLabel(contact_person_details_frame, text="Contact Person: ", text_color='#4C3D3D')
+name_label.grid(row=0, column=0)
+name_entry = tk.Entry(contact_person_details_frame)
+name_entry.grid(row=0, column=1)
+
+email_label = ctk.CTkLabel(contact_person_details_frame, text="Email: ", text_color='#4C3D3D')
+email_label.grid(row=1, column=0)
+email_entry = tk.Entry(contact_person_details_frame)
+email_entry.grid(row=1, column=1)
+
+number_label = ctk.CTkLabel(contact_person_details_frame, text="Contact Number: ", text_color='#4C3D3D')
+number_label.grid(row=0, column=2)
+number_entry = tk.Entry(contact_person_details_frame)
+number_entry.grid(row=0, column=3)
+
+address_label = ctk.CTkLabel(contact_person_details_frame, text="Address: ", text_color='#4C3D3D')
+address_label.grid(row=2, column=0)
+address_entry = tk.Entry(contact_person_details_frame)
+address_entry.grid(row=2, column=1)
+
+relationship_label = ctk.CTkLabel(contact_person_details_frame, text="Relationship to the contact person: ", text_color='#4C3D3D')
+relationship_label.grid(row=1, column=2)
+relationship_entry = tk.Entry(contact_person_details_frame)
+relationship_entry.grid(row=1, column=3)
+
+for widget in contact_person_details_frame.winfo_children():
+    widget.grid_configure(padx=5, pady=2)
+
 # add buttons
 ## collect information
 
