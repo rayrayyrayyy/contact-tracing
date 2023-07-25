@@ -69,20 +69,20 @@ vaccinated_label.grid(row=0, column=0)
 
 radiobutton_var = ctk.IntVar(value=1)
 
-radio_button_1 = ctk.CTkRadioButton(vaccinated_frame, variable=radiobutton_var, text='Not yet', value=1)
-radio_button_1.grid(row=3, column=2)
+radio_button_1 = ctk.CTkRadioButton(vaccinated_frame, variable=radiobutton_var, text='Not yet', value=1, hover_color='#FFD95A', fg_color='#4C3D3D')
+radio_button_1.grid(row=3, column=0, padx=20)
 
-radio_button_2 = ctk.CTkRadioButton(vaccinated_frame, variable=radiobutton_var, text='1st Dose', value=2)
-radio_button_2.grid(row=4, column=2)
+radio_button_2 = ctk.CTkRadioButton(vaccinated_frame, variable=radiobutton_var, text='1st Dose', value=2, hover_color='#FFD95A', fg_color='#4C3D3D')
+radio_button_2.grid(row=4, column=0, padx=20)
 
-radio_button_3 = ctk.CTkRadioButton(vaccinated_frame, variable=radiobutton_var, text='2nd Dose', value=3)
-radio_button_3.grid(row=5, column=2)
+radio_button_3 = ctk.CTkRadioButton(vaccinated_frame, variable=radiobutton_var, text='2nd Dose', value=3, hover_color='#FFD95A', fg_color='#4C3D3D')
+radio_button_3.grid(row=5, column=0, padx=20)
 
-radio_button_4 = ctk.CTkRadioButton(vaccinated_frame, variable=radiobutton_var, text='1sy Booster Shot', value=4)
-radio_button_4.grid(row=6, column=2)
+radio_button_4 = ctk.CTkRadioButton(vaccinated_frame, variable=radiobutton_var, text='1st Booster Shot', value=4, hover_color='#FFD95A', fg_color='#4C3D3D')
+radio_button_4.grid(row=6, column=0, padx=20)
 
-radio_button_5 = ctk.CTkRadioButton(vaccinated_frame, variable=radiobutton_var, text='2nd Booster Shot', value=5)
-radio_button_5.grid(row=7, column=2)
+radio_button_5 = ctk.CTkRadioButton(vaccinated_frame, variable=radiobutton_var, text='2nd Booster Shot', value=5, hover_color='#FFD95A', fg_color='#4C3D3D')
+radio_button_5.grid(row=7, column=0, padx=20)
 
 # create GUI elements for symptoms
 # create GUI elements to ask user if he/she had been tested for Covid-19 in the last two weeks
