@@ -60,9 +60,15 @@ address_entry.grid(row=2, column=3)
 for widget in personal_details_frame.winfo_children():
     widget.grid_configure(padx=5, pady=15)
 
-
-
 # create GUI elements to ask user if vaccinated or not
+vaccinated_frame =tk.LabelFrame(frame, text="")
+vaccinated_frame.grid(row= 1, column=0, sticky='news', padx=100, pady=25)
+
+vaccinated_label = ctk.CTkLabel(vaccinated_frame, text=" Are you vaccinated for COVID-19?")
+vaccinated_label.grid(row=0, column=0)
+
+
+
 # create GUI elements for symptoms
 # create GUI elements to ask user if he/she had been tested for Covid-19 in the last two weeks
 # create GUI elements for contact person's details
