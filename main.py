@@ -114,16 +114,16 @@ checkbox_5 = ctk.CTkCheckBox(symptoms_frame, text='Loss of smell', hover_color='
 checkbox_5.grid(row=7)
 
 checkbox_6 = ctk.CTkCheckBox(symptoms_frame, text='Shortness of breath', hover_color='#FFD95A', fg_color='#4C3D3D')
-checkbox_6.grid(row=8)
+checkbox_6.grid(row=3, column=3)
 
 checkbox_7 = ctk.CTkCheckBox(symptoms_frame, text='Runny nose', hover_color='#FFD95A', fg_color='#4C3D3D')
-checkbox_7.grid(row=9)
+checkbox_7.grid(row=4, column=3)
 
 checkbox_8 = ctk.CTkCheckBox(symptoms_frame, text='Fatigue', hover_color='#FFD95A', fg_color='#4C3D3D')
-checkbox_8.grid(row=10)
+checkbox_8.grid(row=5, column=3)
 
 checkbox_9 = ctk.CTkCheckBox(symptoms_frame, text='None of the above', hover_color='#FFD95A', fg_color='#4C3D3D')
-checkbox_9.grid(row=11)
+checkbox_9.grid(row=6, column=3)
 
 # create GUI elements to ask user if he/she had been tested for Covid-19 in the last two weeks
 tested_frame =tk.LabelFrame(frame, text="")
@@ -156,19 +156,14 @@ name_entry = tk.Entry(contact_person_details_frame)
 name_entry.grid(row=0, column=1)
 
 email_label = ctk.CTkLabel(contact_person_details_frame, text="Email: ", text_color='#4C3D3D')
-email_label.grid(row=1, column=0)
-email_entry = tk.Entry(contact_person_details_frame)
-email_entry.grid(row=1, column=1)
+email_label.grid(row=0, column=4)
+email_contact_entry = tk.Entry(contact_person_details_frame)
+email_contact_entry.grid(row=0, column=5)
 
 number_label = ctk.CTkLabel(contact_person_details_frame, text="Contact Number: ", text_color='#4C3D3D')
 number_label.grid(row=0, column=2)
-number_entry = tk.Entry(contact_person_details_frame)
-number_entry.grid(row=0, column=3)
-
-address_label = ctk.CTkLabel(contact_person_details_frame, text="Address: ", text_color='#4C3D3D')
-address_label.grid(row=2, column=0)
-address_entry = tk.Entry(contact_person_details_frame)
-address_entry.grid(row=2, column=1)
+contact_number_entry = tk.Entry(contact_person_details_frame)
+contact_number_entry.grid(row=0, column=3)
 
 relationship_label = ctk.CTkLabel(contact_person_details_frame, text="Relationship to the contact person: ", text_color='#4C3D3D')
 relationship_label.grid(row=1, column=2)
@@ -179,7 +174,19 @@ for widget in contact_person_details_frame.winfo_children():
     widget.grid_configure(padx=5, pady=2)
 
 # add buttons
+def clear():
+    last_name_entry.delete(0, END)
+    first_name_entry.delete(0, END)
+    middle_name_entry.delete(0, END)
+    email_entry.delete(0, END)
+    address_entry.delete(0, END)
+    number_entry.delete(0, END)
+
+    # add clear button
+    clear_button = Button(root_window, text = "CLEAR", width = 20, command = clear)
+    clear_button.place(x=150, y=880)
+
 ## collect information
 
-
+clear()
 root_window.mainloop()
