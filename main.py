@@ -122,6 +122,12 @@ checkbox_9 = ctk.CTkCheckBox(symptoms_frame, text='None of the above', hover_col
 checkbox_9.grid(row=11)
 
 # create GUI elements to ask user if he/she had been tested for Covid-19 in the last two weeks
+tested_frame =tk.LabelFrame(frame, text="")
+tested_frame.grid(row= 3, column=0, sticky='news', padx=100, pady=25)
+
+tested_label = ctk.CTkLabel(symptoms_frame, text=" Have you been tested for COVID-19 in the last 14 days?")
+tested_label.grid(row=0, column=0)
+
 # create GUI elements for contact person's details
 # add buttons
 
