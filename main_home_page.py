@@ -6,6 +6,7 @@ from tkinter import messagebox
 from tkinter import *
 import customtkinter as ctk
 from data_entry import DataEntry
+from search_data import SearchEntry
 
 class HomePage(): # create class
 
@@ -21,7 +22,7 @@ class HomePage(): # create class
         entry_button.place(x=400, y=440)
 
         # add search data button
-        search_button = Button(self.home_page, text= "SEARCH ENTRY", width=20, height=10, command = self.entry_window)
+        search_button = Button(self.home_page, text= "SEARCH ENTRY", width=20, height=10, command = self.search_window)
         search_button.place(x=630, y=440)
 
         self.home_page.mainloop()
@@ -29,6 +30,10 @@ class HomePage(): # create class
     def entry_window(self):
         self.home_page.destroy()
         DataEntry()
+
+    def search_window(self):
+        self.home_page.destroy()
+        SearchEntry()
 
     def execute(self):
         self.home_page.mainloop()

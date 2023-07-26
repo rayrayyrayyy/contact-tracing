@@ -12,7 +12,7 @@ class DataEntry(): # put in class
 
     def __init__(self):
         # create GUI window
-        self.root_window = ctk.CTkToplevel()
+        self.root_window = ctk.CTk()
         self.root_window.title("COVID-19 Contact Tracing APP")
         self.root_window.geometry("1100x950")
         self.root_window.config( bg = "#FFF7D4" )
@@ -216,6 +216,16 @@ class DataEntry(): # put in class
         # add submit button
         submit_button = ctk.CTkButton(self.root_window, text = "ENTER", width=90, height=50, corner_radius=10, hover_color='#8B6508', fg_color='#4C3D3D', command = submit)
         submit_button.place(x=895, y=840)
+
+        def back():
+            back_msg_box = messagebox.askyesno("NOTICE", "Go back to home page?")
+            if back_msg_box == YES:
+                self.root_window.quit()
+            else:
+                return
+
+        back_button = Button(self.root_window, text = "BACK", width = 20, command = back)
+        back_button.place(x=225, y=200)
 
     def execute(self):
         self.root_window.mainloop()
