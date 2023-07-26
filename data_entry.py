@@ -210,5 +210,4 @@ submit_button.place(x=895, y=840)
 
 ## collect information
 
-clear()
 root_window.mainloop()
