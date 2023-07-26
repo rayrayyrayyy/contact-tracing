@@ -59,8 +59,8 @@ class DataEntry(): # put in class
 
         self.address_label = ctk.CTkLabel(self.personal_details_frame, text="Address: ", text_color='#4C3D3D')
         self.address_label.grid(row=2, column=0)
-        self.address_entry = tk.Entry(self.personal_details_frame)
-        self.address_entry.grid(row=2, column=3)
+        self.address_entry = tk.Entry(self.root_window, width=105)
+        self.address_entry.place(x=230, y=160)
 
         for widget in self.personal_details_frame.winfo_children():
             widget.grid_configure(padx=12, pady=2)
@@ -213,7 +213,7 @@ class DataEntry(): # put in class
 
         # add submit button
         submit_button = ctk.CTkButton(self.root_window, text = "ENTER", width=90, height=50, corner_radius=10, hover_color='#8B6508', fg_color='#4C3D3D')
-        submit_button.place(x=895, y=840)
+        submit_button.place(x=795, y=840)
 
     def execute(self):
         self.root_window.mainloop()

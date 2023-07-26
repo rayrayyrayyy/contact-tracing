@@ -34,13 +34,19 @@ class HomePage(): # create class
 
         # add data entry button
         entry_button = ctk.CTkButton(self.home_page, text= "ENTER DATA", width=150, height=60, corner_radius=10, hover_color='#8B6508', fg_color='#4C3D3D', command = self.entry_window)
-        entry_button.place(x=180, y=460)
+        entry_button.place(x=180, y=360)
 
         # add search data button
         search_button = ctk.CTkButton(self.home_page, text= "SEARCH ENTRY", width=150, height=60, corner_radius=10, hover_color='#8B6508', fg_color='#4C3D3D', command = self.search_window)
-        search_button.place(x=180, y=540)
+        search_button.place(x=180, y=440)
+
+        help_button = ctk.CTkButton(self.home_page, text= "Need Help?", width=150, height=60, corner_radius=10, hover_color='#8B6508', fg_color='#4C3D3D', command = self.help_info)
+        help_button.place(x=180, y=640)
 
         self.home_page.mainloop()
+
+    def help_info(self):
+        messagebox.showinfo('INFO', 'Enter Data: this button will direct you to the contact tracing form where you can fill up and enter data.\n\nSearch Entry: this button will direct you to the window where you can search an entry.')
 
     def entry_window(self):
         self.home_page.destroy()
