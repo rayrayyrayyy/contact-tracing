@@ -11,7 +11,7 @@ import customtkinter as ctk
 # create GUI window
 root_window = ctk.CTk()
 root_window.title("COVID-19 Contact Tracing APP")
-root_window.geometry("1150x900")
+root_window.geometry("1100x950")
 root_window.config( bg = "#FFF7D4" )
 
 # create GUI elements for personal details
@@ -186,8 +186,8 @@ def clear(): # define clear function
     checkbox_8.deselect()
     checkbox_9.deselect()
 # add clear button
-clear_button = ctk.CTkButton(root_window, text = "CLEAR", width = 90, height=50, corner_radius=10, hover_color='#8B6508', fg_color='#4C3D3D', command = clear)
-clear_button.place(x=170, y=820)
+clear_button = ctk.CTkButton(root_window, text= "CLEAR", width=90, height=50, corner_radius=10, hover_color='#8B6508', fg_color='#4C3D3D', command = clear)
+clear_button.place(x=150, y=840)
 
 
 def exit(): # define function to exit program
@@ -196,9 +196,17 @@ def exit(): # define function to exit program
         root_window.quit()
     else:
         return
-# exit button
-exit_button = ctk.CTkButton(root_window, text = "EXIT", width = 90, height=50, corner_radius=10, hover_color='#8B6508', fg_color='#4C3D3D', command = exit)
-exit_button.place(x=290, y=820)
+# add exit button
+exit_button = ctk.CTkButton(root_window, text= "EXIT", width=90, height=50, corner_radius=10, hover_color='#8B6508', fg_color='#4C3D3D', command = exit)
+exit_button.place(x=260, y=840)
+
+
+def submit(): # define function to save data
+    pass
+# add submit button
+submit_button = ctk.CTkButton(root_window, text = "ENTER", width=90, height=50, corner_radius=10, hover_color='#8B6508', fg_color='#4C3D3D', command = submit)
+submit_button.place(x=895, y=840)
+
 
 ## collect information
 
