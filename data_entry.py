@@ -8,10 +8,10 @@ from tkinter import messagebox
 from tkinter import *
 import customtkinter as ctk
 
-class DataEntry():# put in class
+class DataEntry(): # put in class
 
     def __init__(self):
-    # create GUI window
+        # create GUI window
         self.root_window = ctk.CTkToplevel()
         self.root_window.title("COVID-19 Contact Tracing APP")
         self.root_window.geometry("1100x950")
