@@ -11,18 +11,12 @@ import customtkinter as ctk
 # create GUI window
 root_window = ctk.CTk()
 root_window.title("COVID-19 Contact Tracing APP")
-root_window.geometry("1150x4000")
+root_window.geometry("1150x900")
 root_window.config( bg = "#FFF7D4" )
-
-#canvas = ctk.CTkCanvas(root_window, scrollregion = (0,0,3000, 1500))
-#canvas.pack(expand = True, fill ='both')
-
-#scrollbar = ttk.Scrollbar(root_window, orient='vertical', command= canvas.yview)
-#canvas.configure(yscrollcommand = Scrollbar.set)
-#scrollbar.place(relx=1, rely=0, relheight=1, anchor='ne') 
 
 # create GUI elements for personal details
 Label(root_window, text = "CONTACT TRACING DATA ENTRY", width=15, height=2, bg='#4C3D3D', fg='#FFD95A', font='times 20 bold').pack(side = TOP, fill = 'x')
+Label(root_window, text = "PUP contact tracing", width=15, height=1, bg='#4C3D3D', fg='#FFD95A', font='arial 10 italic', anchor='w').pack(side = BOTTOM, fill = 'x')
 frame = ctk.CTkFrame(root_window, fg_color="#FFD95A")
 frame.pack()
 
@@ -86,10 +80,10 @@ radio_button_3 = ctk.CTkRadioButton(vaccinated_frame, variable=radiobutton_var, 
 radio_button_3.grid(row=5, column=0, padx=20)
 
 radio_button_4 = ctk.CTkRadioButton(vaccinated_frame, variable=radiobutton_var, text='1st Booster Shot', value=4, hover_color='#FFD95A', fg_color='#4C3D3D')
-radio_button_4.grid(row=6, column=0, padx=20)
+radio_button_4.grid(row=3, column=2, padx=20)
 
 radio_button_5 = ctk.CTkRadioButton(vaccinated_frame, variable=radiobutton_var, text='2nd Booster Shot', value=5, hover_color='#FFD95A', fg_color='#4C3D3D')
-radio_button_5.grid(row=7, column=0, padx=20)
+radio_button_5.grid(row=4, column=2, padx=20)
 
 # create GUI elements for symptoms
 symptoms_frame =tk.LabelFrame(frame, text="")
@@ -183,8 +177,8 @@ def clear():
     number_entry.delete(0, END)
 
     # add clear button
-    clear_button = Button(root_window, text = "CLEAR", width = 20, command = clear)
-    clear_button.place(x=150, y=880)
+    clear_button = ctk.CTkButton(root_window, text = "CLEAR", width = 90, height=50, corner_radius=10, hover_color='#8B6508', fg_color='#4C3D3D', command = clear)
+    clear_button.place(x=170, y=820)
 
 ## collect information
 
