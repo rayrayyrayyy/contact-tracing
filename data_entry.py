@@ -12,10 +12,11 @@ class DataEntry(): # put in class
 
     def __init__(self):
         # create GUI window
-        self.root_window = ctk.CTk()
+        self.root_window = tk.Tk()
         self.root_window.title("COVID-19 Contact Tracing APP")
-        self.root_window.geometry("1100x950")
+        self.root_window.geometry("1000x930")
         self.root_window.config( bg = "#FFF7D4" )
+        self.root_window.resizable(False, False)        
 
         # create GUI elements for personal details
         Label(self.root_window, text = "CONTACT TRACING DATA ENTRY", width=15, height=2, bg='#4C3D3D', fg='#FFD95A', font='times 20 bold').pack(side = TOP, fill = 'x')
@@ -42,9 +43,9 @@ class DataEntry(): # put in class
         self.middle_name_entry.grid(row=0, column=6)
 
         self.age_label = ctk.CTkLabel(self.personal_details_frame, text="Age: ", text_color='#4C3D3D')
-        self.age_spinbox = ttk.Spinbox(self.personal_details_frame, from_=18, to=110)
+        self.age_entry = tk.Entry(self.personal_details_frame)
         self.age_label.grid(row=1, column=0)
-        self.age_spinbox.grid(row=1, column=1)
+        self.age_entry.grid(row=1, column=1)
 
         self.email_label = ctk.CTkLabel(self.personal_details_frame, text="Email: ", text_color='#4C3D3D')
         self.email_label.grid(row=1, column=2)
@@ -210,22 +211,9 @@ class DataEntry(): # put in class
         exit_button = ctk.CTkButton(self.root_window, text= "EXIT", width=90, height=50, corner_radius=10, hover_color='#8B6508', fg_color='#4C3D3D', command = exit)
         exit_button.place(x=260, y=840)
 
-
-        def submit(): # define function to save data
-            pass
         # add submit button
-        submit_button = ctk.CTkButton(self.root_window, text = "ENTER", width=90, height=50, corner_radius=10, hover_color='#8B6508', fg_color='#4C3D3D', command = submit)
+        submit_button = ctk.CTkButton(self.root_window, text = "ENTER", width=90, height=50, corner_radius=10, hover_color='#8B6508', fg_color='#4C3D3D')
         submit_button.place(x=895, y=840)
-
-        def back():
-            back_msg_box = messagebox.askyesno("NOTICE", "Go back to home page?")
-            if back_msg_box == YES:
-                self.root_window.quit()
-            else:
-                return
-
-        back_button = Button(self.root_window, text = "BACK", width = 20, command = back)
-        back_button.place(x=225, y=200)
 
     def execute(self):
         self.root_window.mainloop()
