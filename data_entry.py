@@ -20,7 +20,7 @@ class DataEntry(): # put in class
         self.root_window.resizable(False, False)        
 
         # create GUI elements for personal details
-        Label(self.root_window, text = "CONTACT TRACING DATA ENTRY", width=15, height=2, bg='#4C3D3D', fg='#FFD95A', font='times 20 bold').pack(side = TOP, fill = 'x')
+        Label(self.root_window, text = "DATA ENTRY", width=15, height=2, bg='#4C3D3D', fg='#FFD95A', font='times 20 bold').pack(side = TOP, fill = 'x')
         Label(self.root_window, text = "PUP contact tracing", width=15, height=1, bg='#4C3D3D', fg='#FFD95A', font='arial 10 italic', anchor='w').pack(side = BOTTOM, fill = 'x')
         frame = ctk.CTkFrame(self.root_window, fg_color="#FFD95A")
         frame.pack()

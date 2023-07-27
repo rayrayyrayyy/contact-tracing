@@ -20,6 +20,8 @@ class HomePage(): # create class
         self.home_page.resizable(False, False)
 
         Label(self.home_page, text = "COVID-19 CONTACT TRACING", width=20, height=3, bg='#4C3D3D', fg='#FFD95A', font='times 25 bold').pack(side = TOP, fill = 'x')
+        self.title = tk.Label(self.home_page, text = "PUP CONTACT TRACING APP", fg = "yellow", bg = "#4C3D3D", font=('Arial 11 bold'))
+        self.title.place(x = 136, y = 76, width = 450, height = 22)
         Label(self.home_page, text = "PUP contact tracing", width=15, height=1, bg='#4C3D3D', fg='#FFD95A', font='arial 10 italic', anchor='w').pack(side = BOTTOM, fill = 'x')
         Label(self.home_page, text = "ajhsfjgweyfgyegfgeyfgdjf", width=30, height=2, bg='#4C3D3D', fg='#FFD95A', font='times 20 bold', anchor='center').pack(side = RIGHT, fill = 'y')
 
