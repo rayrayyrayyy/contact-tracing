@@ -5,6 +5,7 @@ from tkinter import messagebox
 from tkinter import *
 import customtkinter as ctk
 import csv
+from main_home_page import HomePage
 
 class SearchEntry(): # create class search entry
 
@@ -94,7 +95,7 @@ class SearchEntry(): # create class search entry
 
         # contact person details
         self.contact_label = tk.Label(self.root_window, text="Contact Person Details ", fg='#4C3D3D', bg = "#FFF7D4", font='times 10 bold')
-        self.contact_label.place(x=130, y=620)
+        self.contact_label.place(x=130, y=630)
 
         self.contact_person_label = tk.Label(self.root_window, text="CONTACT PERSON", fg='#4C3D3D', bg ='#FFD95A', font='verdana 14 bold')
         self.contact_person_label.place(x=160, y=670)
@@ -107,20 +108,21 @@ class SearchEntry(): # create class search entry
         self.relationship_display.place(x=550, y=700)
 
         self.conatact_number_label = tk.Label(self.root_window, text="CONTACT NUMBER", fg='#4C3D3D', bg ='#FFD95A', font='verdana 14 bold')
-        self.conatact_number_label.place(x=160, y=730)
+        self.conatact_number_label.place(x=160, y=750)
         self.contact_number_display = ctk.CTkLabel(self.root_window, text="skjd ", text_color='#4C3D3D', bg_color='#FFD95A')
-        self.contact_number_display.place(x=160, y=760)
+        self.contact_number_display.place(x=160, y=780)
 
         self.conatact_email_label = tk.Label(self.root_window, text="CONTACT NUMBER", fg='#4C3D3D', bg ='#FFD95A', font='verdana 14 bold')
-        self.conatact_email_label.place(x=550, y=730)
+        self.conatact_email_label.place(x=550, y=750)
         self.contact_email_display = ctk.CTkLabel(self.root_window, text="skjd ", text_color='#4C3D3D', bg_color='#FFD95A')
-        self.contact_email_display.place(x=550, y=760)
+        self.contact_email_display.place(x=550, y=780)
 
 
 
         # add search button
         search_button = ctk.CTkButton(self.root_window, text= "SEARCH ENTRY", width=100, height=40, corner_radius=10, hover_color='#8B6508', fg_color='#4C3D3D', bg_color='#FFD95A', command = self.locate_entry)
         search_button.place(x=500, y=180)
+
 
         def clear(): # define clear function
             self.surname_entry.delete(0, END)
@@ -143,6 +145,15 @@ class SearchEntry(): # create class search entry
         # add clear button
         clear_button = ctk.CTkButton(self.root_window, text= "CLEAR", width=100, height=40, corner_radius=10, hover_color='#8B6508', fg_color='#4C3D3D', bg_color='#FFD95A', command = clear)
         clear_button.place(x=380, y=180)
+
+
+        def back():
+            self.root_window.destroy()
+            HomePage()
+
+        # add back button
+        back_button = ctk.CTkButton(self.root_window, text= "BACK", width=100, height=40, corner_radius=10, hover_color='#8B6508', fg_color='#4C3D3D', bg_color='#FFD95A', command = back)
+        back_button.place(x=760, y=890)
 
 
     def locate_entry():
