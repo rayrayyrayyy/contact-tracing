@@ -119,7 +119,7 @@ class SearchEntry(): # create class search entry
 
 
         # add search button
-        search_button = ctk.CTkButton(self.root_window, text= "SEARCH ENTRY", width=100, height=40, corner_radius=10, hover_color='#8B6508', fg_color='#4C3D3D', bg_color='#FFD95A', command = self.locate_entry)
+        search_button = ctk.CTkButton(self.root_window, text= "SEARCH ENTRY", width=100, height=40, corner_radius=10, hover_color='#CDAD00', fg_color='#4C3D3D', bg_color='#FFD95A', command = self.locate_entry)
         search_button.place(x=500, y=180)
 
         def clear(): # define clear function
@@ -154,7 +154,15 @@ class SearchEntry(): # create class search entry
         back_button = ctk.CTkButton(self.root_window, text= "BACK", width=90, height=40, corner_radius=10, hover_color='#CD3333', fg_color='#4C3D3D', bg_color='#FFD95A', command = back)
         back_button.place(x=700, y=837)
 
+        def exit(): # define function to exit program
+            msg_box = messagebox.askyesno("NOTICE", "You're about to exit the program?")
+            if msg_box == YES:
+                self.root_window.quit()
+            else:
+                return
         # add exit button
+        exit_button = ctk.CTkButton(self.root_window, text= "EXIT", width=90, height=40, corner_radius=10, hover_color='#8B2323', fg_color='#4C3D3D', bg_color='#FFD95A', command = exit)
+        exit_button.place(x=810, y=837)
 
 
     def locate_entry():
