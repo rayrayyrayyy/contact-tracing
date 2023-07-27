@@ -208,9 +208,17 @@ class DataEntry(): # put in class
             self.radiobutton_tested_var.set(0)
 
         # add clear button
-        clear_button = ctk.CTkButton(self.root_window, text= "CLEAR", width=90, height=50, corner_radius=10, hover_color='#8B6508', fg_color='#4C3D3D', command = clear)
-        clear_button.place(x=150, y=840)
+        clear_button = ctk.CTkButton(self.root_window, text= "CLEAR", width=90, height=50, corner_radius=10, hover_color='#CDAD00', fg_color='#4C3D3D', command = clear)
+        clear_button.place(x=340, y=840)
 
+        def back(): # define back function
+            from main_home_page import HomePage
+            self.root_window.destroy()
+            HomePage()
+
+        # add back button
+        back_button = ctk.CTkButton(self.root_window, text= "BACK", width=90, height=50, corner_radius=10, hover_color='#CD3333', fg_color='#4C3D3D', command = back)
+        back_button.place(x=100, y=840)
 
         def exit(): # define function to exit program
             msg_box = messagebox.askyesno("NOTICE", "You're about to exit the program?")
@@ -219,8 +227,8 @@ class DataEntry(): # put in class
             else:
                 return
         # add exit button
-        exit_button = ctk.CTkButton(self.root_window, text= "EXIT", width=90, height=50, corner_radius=10, hover_color='#8B6508', fg_color='#4C3D3D', command = exit)
-        exit_button.place(x=260, y=840)
+        exit_button = ctk.CTkButton(self.root_window, text= "EXIT", width=90, height=50, corner_radius=10, hover_color='#8B2323', fg_color='#4C3D3D', command = exit)
+        exit_button.place(x=200, y=840)
 
 
         def submit_data(): # define function to save data
@@ -265,7 +273,7 @@ class DataEntry(): # put in class
                 messagebox.showerror('ERROR', 'Error Occured.')
         # add submit button
         submit_button = ctk.CTkButton(self.root_window, text = "ENTER", width=90, height=50, corner_radius=10, hover_color='#8B6508', fg_color='#4C3D3D', command=submit_data)
-        submit_button.place(x=795, y=840)
+        submit_button.place(x=815, y=840)
 
     def execute(self):
         self.root_window.mainloop()

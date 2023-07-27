@@ -5,7 +5,6 @@ from tkinter import messagebox
 from tkinter import *
 import customtkinter as ctk
 import csv
-from main_home_page import HomePage
 
 class SearchEntry(): # create class search entry
 
@@ -123,7 +122,6 @@ class SearchEntry(): # create class search entry
         search_button = ctk.CTkButton(self.root_window, text= "SEARCH ENTRY", width=100, height=40, corner_radius=10, hover_color='#8B6508', fg_color='#4C3D3D', bg_color='#FFD95A', command = self.locate_entry)
         search_button.place(x=500, y=180)
 
-
         def clear(): # define clear function
             self.surname_entry.delete(0, END)
             self.name_entry.delete(0, END)
@@ -147,13 +145,16 @@ class SearchEntry(): # create class search entry
         clear_button.place(x=380, y=180)
 
 
-        def back():
+        def back(): # define back function
+            from main_home_page import HomePage
             self.root_window.destroy()
             HomePage()
 
         # add back button
-        back_button = ctk.CTkButton(self.root_window, text= "BACK", width=100, height=40, corner_radius=10, hover_color='#8B6508', fg_color='#4C3D3D', bg_color='#FFD95A', command = back)
-        back_button.place(x=760, y=890)
+        back_button = ctk.CTkButton(self.root_window, text= "BACK", width=90, height=40, corner_radius=10, hover_color='#CD3333', fg_color='#4C3D3D', bg_color='#FFD95A', command = back)
+        back_button.place(x=700, y=837)
+
+        # add exit button
 
 
     def locate_entry():
