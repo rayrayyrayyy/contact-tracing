@@ -232,7 +232,9 @@ class DataEntry(): # put in class
 
 
         def submit_data(): # define function to save data
-            user_name = self.last_name_entry.get(), self.first_name_entry.get(), self.middle_name_entry.get()
+            last_name = self.last_name_entry.get()
+            first_name = self.first_name_entry.get()
+            middle_name = self.middle_name_entry.get()
             age = self.age_entry.get()
             email = self.email_entry.get()
             number = self.number_entry.get()
@@ -253,8 +255,10 @@ class DataEntry(): # put in class
             "Fatigue": self.fatigue_symptom.get(),
             "None of the above": self.no_symptom.get()}
 
+            symptom = ", ".join(key for key, value in symptoms.items() if value)
+
             try:
-                if not (user_name and age and email and number and address and vaccinated and tested and contact_person and contact_number and relationship and contact_email):
+                if not (last_name and first_name and middle_name and age and email and number and address and vaccinated and symptom and tested and contact_person and contact_number and relationship and contact_email):
                     messagebox.showerror('NOTICE', 'Please enter all fields.')
                 if symptoms == '':
                     messagebox.showerror('ERROR', 'Check atleast one of the following symptoms or None of the above.')
@@ -263,14 +267,14 @@ class DataEntry(): # put in class
                     user_age = int(age)
                     cp_number = int(number)
                     contact_num = int(contact_number)
-                    with open('data_entries.cvs', 'a', newline='') as file:
+                    with open('data_entries.csv', 'a', newline='') as file:
                         data_input = csv.writer(file)
-                        data_input.writerow([user_name, age, email, number, address, vaccinated, tested, contact_person, contact_number, relationship, contact_email])
+                        data_input.writerow([last_name, first_name, middle_name, age, email, number, address, vaccinated, symptom, tested, contact_person, contact_number, relationship, contact_email])
                     messagebox.showinfo('SUCCESS', 'Data saved.')
             except ValueError:
                 messagebox.showerror('ERROR', 'age and contact numbers should be an integer')              
             except:
-                messagebox.showerror('ERROR', 'Error Occured.')
+                messagebox.showerror('ERROR', 'Error Occured: Please double check all fields required.')
         # add submit button
         submit_button = ctk.CTkButton(self.root_window, text = "ENTER", width=90, height=50, corner_radius=10, hover_color='#8B6508', fg_color='#4C3D3D', command=submit_data)
         submit_button.place(x=815, y=840)

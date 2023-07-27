@@ -117,9 +117,38 @@ class SearchEntry(): # create class search entry
         self.contact_email_display.place(x=550, y=780)
 
 
+        def locate_entry():
+            respondent_surname = self.surname_entry.get()
+        
+            data_entries = []
+
+            with open("data_entries.csv", "r") as file:
+                reader = csv.reader(file)
+                for row in reader:        
+                    if respondent_surname in row:
+                        data_entries.append(row)
+                        break
+
+            if data_entries:          
+                self.last_name_display.configure(text = f"{row[0]}")
+                self.first_name_display.configure(text = f"{row[1]}")
+                self.middle_name_display.configure(text = f"{row[2]}")
+                self.age_display.configure(text = f"{row[3]}")
+                self.email_display.configure(text = f"{row[4]}")
+                self.number_display.configure(text = f"{row[5]}")
+                self.display_if_vaccinated.configure(text = f"{row[7]}")
+                self.show_symptoms.configure(text = f"{row[8]}")
+                self.show_if_tested.configure(text = f"{row[9]}")
+                self.contact_person_display.configure(text = f"{row[10]}")
+                self.contact_number_display.configure(text = f"{row[11]}")
+                self.relationship_display.configure(text = f"{row[12]}")
+                self.contact_email_display.configure(text = f"{row[13]}")
+
+            else: 
+                messagebox.showerror("ERROR", "Name not found. Please enter the full name.")
 
         # add search button
-        search_button = ctk.CTkButton(self.root_window, text= "SEARCH ENTRY", width=100, height=40, corner_radius=10, hover_color='#CDAD00', fg_color='#4C3D3D', bg_color='#FFD95A', command = self.locate_entry)
+        search_button = ctk.CTkButton(self.root_window, text= "SEARCH ENTRY", width=100, height=40, corner_radius=10, hover_color='#CDAD00', fg_color='#4C3D3D', bg_color='#FFD95A', command = locate_entry)
         search_button.place(x=500, y=180)
 
         def clear(): # define clear function
@@ -157,16 +186,13 @@ class SearchEntry(): # create class search entry
         def exit(): # define function to exit program
             msg_box = messagebox.askyesno("NOTICE", "You're about to exit the program?")
             if msg_box == YES:
-                self.root_window.quit()
+                self.root_window.destroy()
             else:
                 return
         # add exit button
         exit_button = ctk.CTkButton(self.root_window, text= "EXIT", width=90, height=40, corner_radius=10, hover_color='#8B2323', fg_color='#4C3D3D', bg_color='#FFD95A', command = exit)
         exit_button.place(x=810, y=837)
 
-
-    def locate_entry():
-        pass
 
     def execute(self):
         self.root_window.mainloop()
