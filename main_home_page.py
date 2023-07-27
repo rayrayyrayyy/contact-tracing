@@ -15,15 +15,14 @@ class HomePage(): # create class
         # create window
         self.home_page = tk.Tk()
         self.home_page.title("COVID-19 Contact Tracing APP")
-        self.home_page.geometry("1000x930")
+        self.home_page.geometry("1000x930+400+50")
         self.home_page.config(bg = "#FFF7D4")
         self.home_page.resizable(False, False)
 
         Label(self.home_page, text = "COVID-19 CONTACT TRACING", width=20, height=3, bg='#4C3D3D', fg='#FFD95A', font='times 25 bold').pack(side = TOP, fill = 'x')
-        self.title = tk.Label(self.home_page, text = "PUP CONTACT TRACING APP", fg = "yellow", bg = "#4C3D3D", font=('Arial 11 bold'))
+        self.title = tk.Label(self.home_page, text = "PUP CONTACT TRACING APP", fg = "#FFF7D4", bg = "#4C3D3D", font=('Arial 11 bold'))
         self.title.place(x = 136, y = 76, width = 450, height = 22)
-        Label(self.home_page, text = "PUP contact tracing", width=15, height=1, bg='#4C3D3D', fg='#FFD95A', font='arial 10 italic', anchor='w').pack(side = BOTTOM, fill = 'x')
-        Label(self.home_page, text = "ajhsfjgweyfgyegfgeyfgdjf", width=30, height=2, bg='#4C3D3D', fg='#FFD95A', font='times 20 bold', anchor='center').pack(side = RIGHT, fill = 'y')
+        Label(self.home_page, text = "sampleemail123@gmail.com", width=15, height=1, bg='#4C3D3D', fg='#FFD95A', font='arial 10 italic', anchor='w').pack(side = BOTTOM, fill = 'x')
 
         original_image = Image.open('cvd.jpg')
         resized_image = original_image.resize((480, 787))  

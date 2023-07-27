@@ -15,7 +15,7 @@ class DataEntry(): # put in class
         # create GUI window
         self.root_window = tk.Tk()
         self.root_window.title("COVID-19 Contact Tracing APP")
-        self.root_window.geometry("1000x930")
+        self.root_window.geometry("1000x930+400+50")
         self.root_window.config( bg = "#FFF7D4" )
         self.root_window.resizable(False, False)        
 
