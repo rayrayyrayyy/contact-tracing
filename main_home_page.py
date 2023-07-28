@@ -28,10 +28,10 @@ class HomePage(): # create class
         resized_image = original_image.resize((480, 787))  
         background_image = ImageTk.PhotoImage(resized_image)
 
-        label1 = tk.Label(image=background_image)
-        label1.image = background_image
+        pic = tk.Label(image=background_image)
+        pic.image = background_image
 
-        label1.place(x=514, y=117)
+        pic.place(x=514, y=117)
 
         # add data entry button
         entry_button = ctk.CTkButton(self.home_page, text= "ENTER DATA", width=150, height=60, corner_radius=10, hover_color='#8B6508', fg_color='#4C3D3D', command = self.entry_window)

@@ -190,9 +190,6 @@ class DataEntry(): # put in class
         self.check_consent.place(x=710, y=805)
         self.check_consent.config(bg='#FFF7D4') 
 
-
-
-
         # add data consent button
         consent_button = ctk.CTkButton(self.root_window, text= "Data privacy consent", width=90, height=10, corner_radius=10, hover_color='#CDAD00', fg_color='#4C3D3D', command = consent)
         consent_button.place(x=580, y=805)
