@@ -185,7 +185,7 @@ class DataEntry(): # put in class
 
         # add data privacy consent
         self.data_privacy = BooleanVar()
-        self.check_consent = tk.Checkbutton(self.root_window, text='Terms and condition', variable=self.terms_and_condition, onvalue = True, offvalue = False)
+        self.check_consent = tk.Checkbutton(self.root_window, text='I agree to the data privacy consent', variable=self.data_privacy, onvalue = True, offvalue = False)
         self.check_consent.place(x=790, y=805)
         self.check_consent.config(bg='#FFF7D4')
 
