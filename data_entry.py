@@ -260,9 +260,6 @@ class DataEntry(): # put in class
             try:
                 if not (last_name and first_name and middle_name and age and email and number and address and vaccinated and symptom and tested and contact_person and contact_number and relationship and contact_email):
                     messagebox.showerror('NOTICE', 'Please enter all fields.')
-                if symptoms == '':
-                    messagebox.showerror('ERROR', 'Check atleast one of the following symptoms or None of the above.')
-                    return
                 else:
                     user_age = int(age)
                     cp_number = int(number)

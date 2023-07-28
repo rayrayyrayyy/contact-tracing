@@ -84,7 +84,7 @@ class SearchEntry(): # create class search entry
         self.symptoms_label = tk.Label(self.root_window, text="Symptoms experienced: ", fg='#4C3D3D', bg ='#FFD95A', font='verdana 15 bold italic')
         self.symptoms_label.place(x=165, y=520)
         self.show_symptoms = ctk.CTkLabel(self.root_window, text="", text_color='#4C3D3D', bg_color='#FFD95A')
-        self.show_symptoms.place(x=490, y=540, anchor=CENTER)
+        self.show_symptoms.place(x=460, y=525)
 
         self.tested_label = tk.Label(self.root_window, text="Been tested for Covid-19 in the last 14 days? ", fg='#4C3D3D', bg ='#FFD95A', font='verdana 15 bold italic')
         self.tested_label.place(x=165, y=570)
