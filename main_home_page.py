@@ -24,7 +24,7 @@ class HomePage(): # create class
         self.title.place(x = 136, y = 76, width = 450, height = 22)
         Label(self.home_page, text = "sampleemail123@gmail.com", width=15, height=1, bg='#4C3D3D', fg='#FFD95A', font='arial 10 italic', anchor='w').pack(side = BOTTOM, fill = 'x')
 
-        original_image = Image.open('cvd.jpg')
+        original_image = Image.open('homepic.jpg')
         resized_image = original_image.resize((480, 787))  
         background_image = ImageTk.PhotoImage(resized_image)
 

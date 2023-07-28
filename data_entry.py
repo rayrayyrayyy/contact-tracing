@@ -272,7 +272,7 @@ class DataEntry(): # put in class
                         data_input.writerow([last_name, first_name, middle_name, age, email, number, address, vaccinated, symptom, tested, contact_person, contact_number, relationship, contact_email])
                     messagebox.showinfo('SUCCESS', 'Data saved.')
             except ValueError:
-                messagebox.showerror('ERROR', 'age and contact numbers should be an integer')              
+                messagebox.showerror('NOTICE', 'Age and contact numbers should be an integer')              
             except:
                 messagebox.showerror('ERROR', 'Error Occured: Please double check all fields required.')
         # add submit button

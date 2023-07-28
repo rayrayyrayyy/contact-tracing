@@ -24,21 +24,21 @@ class SearchEntry(): # create class search entry
 
         self.surname_label = ctk.CTkLabel(self.root_window, text="Last Name: ", text_color='#4C3D3D', bg_color='#FFD95A')
         self.surname_label.place(x=158, y=110)
-        self.surname_entry = ctk.CTkEntry(self.root_window, width=130, corner_radius=5, fg_color='#FFF7D4', height=10, text_color='#4C3D3D', border_color='#4C3D3D', placeholder_text="Surname")
+        self.surname_entry = ctk.CTkEntry(self.root_window, width=140, corner_radius=5, fg_color='#FFF7D4', height=10, text_color='#4C3D3D', border_color='#4C3D3D', placeholder_text="surname")
         self.surname_entry.place(x=230, y=114)
 
         self.name_label = ctk.CTkLabel(self.root_window, text="First Name: ", text_color='#4C3D3D', bg_color='#FFD95A')
         self.name_label.place(x=390, y=110)
-        self.name_entry = tk.Entry(self.root_window, width=25)
+        self.name_entry = ctk.CTkEntry(self.root_window, width=140, corner_radius=5, fg_color='#FFF7D4', height=10, text_color='#4C3D3D', border_color='#4C3D3D', placeholder_text="first name")
         self.name_entry.place(x=465, y=114)
 
         self.middle_label = ctk.CTkLabel(self.root_window, text="Middle Name: ", text_color='#4C3D3D', bg_color='#FFD95A')
         self.middle_label.place(x=640, y=110)
-        self.middle_entry = tk.Entry(self.root_window, width=15)
+        self.middle_entry = ctk.CTkEntry(self.root_window, width=120, corner_radius=5, fg_color='#FFF7D4', height=10, text_color='#4C3D3D', border_color='#4C3D3D', placeholder_text="middle name")
         self.middle_entry.place(x=725, y=114)
 
         # respondent's details
-        self.contact_label = tk.Label(self.root_window, text="Respondent's Details ", fg='#4C3D3D', bg = "#FFF7D4", font='times 10 bold')
+        self.contact_label = tk.Label(self.root_window, text="Respondent's Details ", fg='#4C3D3D', bg = "#FFF7D4", font='times 10 bold underline')
         self.contact_label.place(x=130, y=240)
 
         self.last_name = tk.Label(self.root_window, text="LAST NAME", fg='#4C3D3D', bg ='#FFD95A', font='verdana 15 bold')
@@ -73,7 +73,7 @@ class SearchEntry(): # create class search entry
 
 
         # health declaration
-        self.health_label = tk.Label(self.root_window, text="Health Declaration", fg='#4C3D3D', bg = "#FFF7D4", font='times 10 bold')
+        self.health_label = tk.Label(self.root_window, text="Health Declaration", fg='#4C3D3D', bg = "#FFF7D4", font='times 10 bold underline')
         self.health_label.place(x=130, y=440)
 
         self.vaccinated_label = tk.Label(self.root_window, text="Vaccinated for Covid-19? ", fg='#4C3D3D', bg ='#FFD95A', font='verdana 15 bold italic')
@@ -93,7 +93,7 @@ class SearchEntry(): # create class search entry
         
 
         # contact person details
-        self.contact_label = tk.Label(self.root_window, text="Contact Person Details ", fg='#4C3D3D', bg = "#FFF7D4", font='times 10 bold')
+        self.contact_label = tk.Label(self.root_window, text="Contact Person Details ", fg='#4C3D3D', bg = "#FFF7D4", font='times 10 bold underline')
         self.contact_label.place(x=130, y=630)
 
         self.contact_person_label = tk.Label(self.root_window, text="CONTACT PERSON", fg='#4C3D3D', bg ='#FFD95A', font='verdana 14 bold')
@@ -145,7 +145,7 @@ class SearchEntry(): # create class search entry
                 self.contact_email_display.configure(text = f"{row[13]}")
 
             else: 
-                messagebox.showerror("USER NOT FOUND", "Name not found. Please enter the full name.")
+                messagebox.showerror("USER NOT FOUND", "Name not found. Please enter the full name or double check.")
 
         # add search button
         search_button = ctk.CTkButton(self.root_window, text= "SEARCH ENTRY", width=100, height=40, corner_radius=10, hover_color='#CDAD00', fg_color='#4C3D3D', bg_color='#FFD95A', command = locate_entry)
