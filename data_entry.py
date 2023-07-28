@@ -26,7 +26,7 @@ class DataEntry(): # put in class
         frame.pack()
 
         self.personal_details_frame =tk.LabelFrame(frame)
-        self.personal_details_frame.grid(row= 0, column=0, padx=50, pady=20)
+        self.personal_details_frame.grid(row= 0, column=0, padx=50, pady=10)
 
         self.last_name_label = ctk.CTkLabel(self.personal_details_frame, text="Last Name: ", text_color='#4C3D3D')
         self.last_name_label.grid(row=0, column=0)
@@ -61,7 +61,7 @@ class DataEntry(): # put in class
         self.address_label = ctk.CTkLabel(self.personal_details_frame, text="Address: ", text_color='#4C3D3D')
         self.address_label.grid(row=2, column=0)
         self.address_entry = tk.Entry(self.root_window, width=105)
-        self.address_entry.place(x=230, y=160)
+        self.address_entry.place(x=230, y=150)
 
         for widget in self.personal_details_frame.winfo_children():
             widget.grid_configure(padx=12, pady=2)
@@ -182,6 +182,14 @@ class DataEntry(): # put in class
         for widget in self.contact_person_details_frame.winfo_children():
             widget.grid_configure(padx=20, pady=2)
 
+
+        # add data privacy consent
+        self.data_privacy = BooleanVar()
+        self.check_consent = tk.Checkbutton(self.root_window, text='Terms and condition', variable=self.terms_and_condition, onvalue = True, offvalue = False)
+        self.check_consent.place(x=790, y=805)
+        self.check_consent.config(bg='#FFF7D4')
+
+
         # add buttons
 
         def clear(): # define clear function
@@ -260,6 +268,13 @@ class DataEntry(): # put in class
             try:
                 if not (last_name and first_name and middle_name and age and email and number and address and vaccinated and symptom and tested and contact_person and contact_number and relationship and contact_email):
                     messagebox.showerror('NOTICE', 'Please enter all fields.')
+                    return
+                if self.data_privacy == False:
+                    messagebox.showwarning('NOTICE', 'Please agree to the terms and condition above.')
+                    return
+                if symptom == '':
+                    messagebox.showerror('ERROR', 'Check atleast one of the following symptoms or None of the above.')
+                    return
                 else:
                     user_age = int(age)
                     cp_number = int(number)
@@ -267,7 +282,7 @@ class DataEntry(): # put in class
                     with open('data_entries.csv', 'a', newline='') as file:
                         data_input = csv.writer(file)
                         data_input.writerow([last_name, first_name, middle_name, age, email, number, address, vaccinated, symptom, tested, contact_person, contact_number, relationship, contact_email])
-                    messagebox.showinfo('SUCCESS', 'Data saved.')
+                        messagebox.showinfo('SUCCESS', 'Data saved.')
             except ValueError:
                 messagebox.showerror('NOTICE', 'Age and contact numbers should be an integer')              
             except:
