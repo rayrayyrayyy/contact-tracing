@@ -191,7 +191,7 @@ class DataEntry(): # put in class
         self.check_consent.config(bg='#FFF7D4') 
 
         # add data consent button
-        consent_button = ctk.CTkButton(self.root_window, text= "Data privacy consent", width=90, height=10, corner_radius=10, hover_color='#CDAD00', fg_color='#4C3D3D', command = consent)
+        consent_button = ctk.CTkButton(self.root_window, text= "Data privacy consent", width=90, height=10, corner_radius=10, hover_color='#228B22', fg_color='#4C3D3D', command = consent)
         consent_button.place(x=580, y=805)
 
 
@@ -201,6 +201,7 @@ class DataEntry(): # put in class
             self.last_name_entry.delete(0, END)
             self.first_name_entry.delete(0, END)
             self.middle_name_entry.delete(0, END)
+            self.age_entry.delete(0, END)
             self.email_entry.delete(0, END)
             self.address_entry.delete(0, END)
             self.number_entry.delete(0, END)
