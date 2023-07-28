@@ -223,7 +223,7 @@ class DataEntry(): # put in class
         def exit(): # define function to exit program
             msg_box = messagebox.askyesno("NOTICE", "You're about to exit the program?")
             if msg_box == YES:
-                self.root_window.quit()
+                self.root_window.destroy()
             else:
                 return
         # add exit button
