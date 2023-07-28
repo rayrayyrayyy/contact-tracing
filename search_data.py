@@ -119,13 +119,15 @@ class SearchEntry(): # create class search entry
 
         def locate_entry():
             respondent_surname = self.surname_entry.get()
+            respondent_firstname = self.name_entry.get()
+            respondent_middlename = self.middle_entry.get()
         
             data_entries = []
 
             with open("data_entries.csv", "r") as file:
                 reader = csv.reader(file)
                 for row in reader:        
-                    if respondent_surname in row:
+                    if respondent_surname and respondent_firstname and respondent_middlename in row:
                         data_entries.append(row)
                         break
 
@@ -150,6 +152,7 @@ class SearchEntry(): # create class search entry
         # add search button
         search_button = ctk.CTkButton(self.root_window, text= "SEARCH ENTRY", width=100, height=40, corner_radius=10, hover_color='#CDAD00', fg_color='#4C3D3D', bg_color='#FFD95A', command = locate_entry)
         search_button.place(x=500, y=180)
+
 
         def clear(): # define clear function
             self.surname_entry.delete(0, END)

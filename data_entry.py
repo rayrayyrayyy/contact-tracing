@@ -8,6 +8,7 @@ from tkinter import messagebox
 from tkinter import *
 import customtkinter as ctk
 import csv
+from data_privacy_consent import consent
 
 class DataEntry(): # put in class
 
@@ -186,8 +187,15 @@ class DataEntry(): # put in class
         # add data privacy consent
         self.data_privacy = BooleanVar()
         self.check_consent = tk.Checkbutton(self.root_window, text='I agree to the data privacy consent', variable=self.data_privacy, onvalue = True, offvalue = False)
-        self.check_consent.place(x=790, y=805)
-        self.check_consent.config(bg='#FFF7D4')
+        self.check_consent.place(x=710, y=805)
+        self.check_consent.config(bg='#FFF7D4') 
+
+
+
+
+        # add data consent button
+        consent_button = ctk.CTkButton(self.root_window, text= "Data privacy consent", width=90, height=10, corner_radius=10, hover_color='#CDAD00', fg_color='#4C3D3D', command = consent)
+        consent_button.place(x=580, y=805)
 
 
         # add buttons
@@ -264,16 +272,15 @@ class DataEntry(): # put in class
             "None of the above": self.no_symptom.get()}
 
             symptom = ", ".join(key for key, value in symptoms.items() if value)
+            data_consent = self.data_privacy.get()
 
             try:
                 if not (last_name and first_name and middle_name and age and email and number and address and vaccinated and symptom and tested and contact_person and contact_number and relationship and contact_email):
                     messagebox.showerror('NOTICE', 'Please enter all fields.')
-                    return
-                if self.data_privacy == False:
-                    messagebox.showwarning('NOTICE', 'Please agree to the terms and condition above.')
-                    return
-                if symptom == '':
-                    messagebox.showerror('ERROR', 'Check atleast one of the following symptoms or None of the above.')
+                    if data_consent == False:
+                        messagebox.showwarning('NOTICE', 'Please agree to the terms and condition above.')
+                    if symptom == '':
+                        messagebox.showerror('ERROR', 'Check atleast one of the following symptoms or None of the above.')
                     return
                 else:
                     user_age = int(age)
